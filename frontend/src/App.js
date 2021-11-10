@@ -1,24 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import Layout from './components/Layout';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './containers/Home';
+import Contact from './containers/Contact';
+import ListingDetails from './containers/ListingDetail';
+import Listings from './containers/Listings';
+import Login from './containers/Login';
+import SignUp from './containers/SignUp';
+import About from './containers/About';
+import NotFound from './components/NotFound';
 
-function App() {
+import './sass/main.scss';
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Layout>
+        <Routes>
+        <Route exact path='/' element={<Home />} />
+        <Route exact path='/about' element={<About />} />
+        <Route exact path='/contact' element={<Contact />} />
+        <Route exact path='/listings' element={<Listings />} />
+        <Route exact path='/listings/:id' element={<ListingDetails />} />
+        <Route exact path='/login' element={<Login />} />
+        <Route exact path='/signup' element={<SignUp />} />
+        <Route element={<NotFound />} />
+        </Routes>
+      </Layout>
+    </Router>
   );
 }
 
