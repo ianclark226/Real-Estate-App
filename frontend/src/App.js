@@ -10,10 +10,14 @@ import SignUp from './containers/SignUp';
 import About from './containers/About';
 import NotFound from './components/NotFound';
 
+import { Provider } from 'react-redux';
+import store from './store';
+
 import './sass/main.scss';
 
 const App = () => {
   return (
+    <Provider store={store}>
     <Router>
       <Layout>
         <Routes>
@@ -28,6 +32,7 @@ const App = () => {
         </Routes>
       </Layout>
     </Router>
+    </Provider>
   );
 }
 
