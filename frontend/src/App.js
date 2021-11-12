@@ -9,6 +9,7 @@ import Login from './containers/Login';
 import SignUp from './containers/SignUp';
 import About from './containers/About';
 import NotFound from './components/NotFound';
+import PrivateRoute from './components/PrivateRoute';
 
 import { Provider } from 'react-redux';
 import store from './store';

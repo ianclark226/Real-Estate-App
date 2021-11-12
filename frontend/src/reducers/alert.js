@@ -1,9 +1,8 @@
-/* eslint-disable default-case */
-import { SET_ALERT, REMOVE_ALERT } from "../actions/types";
+/* eslint-disable import/no-anonymous-default-export */
+import { SET_ALERT, REMOVE_ALERT } from '../actions/types';
 
 const initialState = [];
 
-// eslint-disable-next-line import/no-anonymous-default-export
 export default function(state = initialState, action) {
     const { type, payload } = action;
 

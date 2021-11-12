@@ -28,4 +28,3 @@ class SignupView(APIView):
                     return Response({'success': 'User created successfully'})
         else:
             return Response({'error': 'Passwords do not match'})
-
